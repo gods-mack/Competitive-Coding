@@ -4,14 +4,14 @@ using namespace std;
 
 void rescue(int n,char* s)
 {
- 
+
 if(s[0][0]=='p')
 {
   for(int i=0;i<n/2;i++)
    {  cout<<"LEFT"<<endl; }
  for(int j=0;j<n/2;j++)
    { cout<<"UP"<<endl; }
-   
+
  }
 
 if(s[0][(n/2)*2]=='p')
@@ -57,9 +57,3 @@ rescue(m,s);
 
 return 0;
 }
-
-
-
-
-
-
