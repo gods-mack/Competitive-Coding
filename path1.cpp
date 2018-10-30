@@ -1,4 +1,6 @@
-//Given an array of N elements and two integers A, B which belongs to the given array. Create a Binary Search Tree by inserting element from arr[0] to arr[n-1]. The task is to find the maximum element in the path from A to B.
+//Given an array of N elements and two integers A, B which belongs to the given array. 
+//Create a Binary Search Tree by inserting element from arr[0] to arr[n-1]. The task is to find the maximum element in 
+//the path from A to B.
 
 
 #include<iostream>
@@ -84,7 +86,7 @@ a.addleaf(28.5);
 a.addleaf(28.2);
 
 
-a.getNode(28.5,30);  //input A and B respectively (A>B must be) .
+a.getNode(28.5,30);  //input A and B respectively (A<B must be) .
 
 }
 
