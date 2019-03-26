@@ -9,19 +9,31 @@
 using namespace std;
 
 void nextTwoSum( vector<int> &a, int n){
-vector<int> newArr(n);
-
+ int zero,one;
  for(int i=0;i<n;i++){
-   if(i == (n-2) ){
-      newArr[i] = a[i+1] + a[ (i+2) -n ];
+    if(i == 0){
+        zero = a[i+1] + a[i+2];
     }
-   else if(i == (n-1) ){
-      newArr[i] = a[(i+1) -n] + a[(i+2) -n];
+    else if(i == 1){
+        one = a[i+1] + a[i+2];
     }
-   else{
-      newArr[i] = a[i+1] + a[i+2];
-    }
- }   
+    else{
+        if(i == (n-2) ){
+            a[i] = a[i+1] + a[ (i+2) -n ];
+        }
+        else if(i == (n-1) ){
+            a[i] = a[(i+1) -n] + a[(i+2) -n];
+        }
+        else{
+            a[i] = a[i+1] + a[i+2];
+        }
+    } 
+ }
+ a[0] = zero; a[1] = one;
+ cout<<"Output : "<<endl;
+  for(int j=0;j<n;j++){
+      cout<<a[j]<<" ";
+  }
 
 } // end nextTwoSum
 
