@@ -28,7 +28,7 @@ z = (number of nodes after merge point).  Next three lines contain x, y and z va
 
 // question URL  https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1
 
-
+*/
 #include<iostream>
 #include<cstdio>
 #include<cmath>
@@ -54,13 +54,7 @@ void append(struct Node** head_ref, struct Node **tail_ref, int new_data)
 }
 
 
-/* Approach :
- Here's a simple trick. As the values are always positive, so traverse 
- through the first linked list, and multiply all values by -1.
- Now start traversing from the second head. 
- If any negative value is encountered, 
- means that is the merge point. So return negative of that value.
-*/
+
 void intersection_point(Node *head1,Node *head2){
      
   Node *tmp1,*tmp2;
@@ -74,7 +68,7 @@ void intersection_point(Node *head1,Node *head2){
  while(tmp2!=NULL){
      
    if(tmp2->data<0){
-     cout<<" Intersect Point "<<abs(tmp2->data);
+     cout<<"Intersect Point "<<abs(tmp2->data)<<endl;
      break;
    }
   tmp2 = tmp2->next;
@@ -117,3 +111,24 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
