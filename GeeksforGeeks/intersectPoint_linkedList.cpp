@@ -54,7 +54,13 @@ void append(struct Node** head_ref, struct Node **tail_ref, int new_data)
 }
 
 
-
+/* Approach :
+ Here's a simple trick. As the values are always positive, so traverse 
+ through the first linked list, and multiply all values by -1.
+ Now start traversing from the second head. 
+ If any negative value is encountered, 
+ means that is the merge point. So return negative of that value.
+*/
 void intersection_point(Node *head1,Node *head2){
      
   Node *tmp1,*tmp2;
