@@ -64,11 +64,11 @@ public:
 
 		vector<int> a1;
  		vector<int> a2;
-
+                 // if boths lies on both side of tree (right subtree and left subtree) then root will be LCA
 		if( (n1>root->data and n2<root->data) or (n1<root->data and n2>root->data)){
 			cout<<root->data<<" is the LCA node. "<<endl;
 		}
-
+                // when both nodes lies in right subtree
 		else if(n1>=root->data and n2>=root->data){
  			
 
@@ -110,7 +110,7 @@ public:
 
  			}
 		}
-
+                 //  when both nodes lies in left subtree.
 		else if(n1<root->data and n2<root->data){
 			node *tmp = root;
             tmp = tmp->left;
@@ -160,6 +160,9 @@ public:
 		for(int j=0;j<a2.size();j++){
 			cout<<a2[j]<<" ";
 		}
+		
+		
+		// we will print common NUmber , common number will be LCA from both arrays
 
 	}
 
