@@ -9,8 +9,8 @@ using namespace std;
 struct node
 {
 	int data;
-	node *left;  // as pervious node pointer
-	node *right;  // as next node pointer
+	node *left;  
+	node *right;  
 	
 };
 
@@ -60,7 +60,11 @@ public:
 		}
 
 	}
-    int count = 0;
+   
+	
+	int count=0;
+	
+	// main operation function to fin kth smallest element in bST
 	void kthSmall(node *tmp,int k){
         //count++;
 		if(tmp->left!=NULL){
