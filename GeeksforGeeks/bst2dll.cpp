@@ -60,6 +60,8 @@ public:
 	}
 
 	node *prv=NULL,*curr=NULL,*head=NULL;
+	
+	// main operation function to convert BST to DLL
 	void bst2dll(node *curr,node **head){
 
 		if(curr==NULL){
@@ -74,7 +76,7 @@ public:
 			*head = curr;
 		}
 		else{
-            curr->left = prv;
+                        curr->left = prv;
 			prv->right = curr;
 
 		}
@@ -126,7 +128,7 @@ int main(){
 	node *head = NULL;
 
 	obj.bst2dll(root,&head);
-    cout<<"DLL : ";
+        cout<<"DLL : ";
 	obj.printList(head);
 	
 
