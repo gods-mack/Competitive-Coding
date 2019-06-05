@@ -1,10 +1,10 @@
 // C++ program to find height of tree 
+
 #include <bits/stdc++.h> 
 using namespace std; 
 
 
-/* A binary tree node has data, pointer to left child 
-and a pointer to right child */
+
 class node 
 { 
 	public: 
@@ -33,8 +33,7 @@ int maxDepth(node* node)
 	} 
 } 
 
-/* Helper function that allocates a new node with the 
-given data and NULL left and right pointers. */
+
 node* newNode(int data) 
 { 
 	node* Node = new node(); 
@@ -45,7 +44,7 @@ node* newNode(int data)
 	return(Node); 
 } 
 	
-// Driver code	 
+ 
 int main() 
 { 
 	node *root = newNode(1); 
@@ -59,4 +58,4 @@ int main()
 	return 0; 
 } 
 
-// This code is contributed by rathbhupendra 
+
