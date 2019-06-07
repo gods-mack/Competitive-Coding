@@ -31,16 +31,13 @@ int makeAtoi(string s){
 
 	int size = s.length()-1;
 	int answer = 0;
-	int tmpSize  = size+1;
 	
 	
-	
-	
-	for(int i=0;i<tmpSize;i++){
+	for(int i=0;i<s.lengtha;i++){
 		
-		    answer = answer + ( (int(s[i])-48)* pow(10,size) );
-			cout<<answer<<endl;
-			size--;
+		answer = answer + ( (int(s[i])-48)* pow(10,size) );
+		cout<<answer<<endl;
+		size--;
 	}
 	
 	return answer;
