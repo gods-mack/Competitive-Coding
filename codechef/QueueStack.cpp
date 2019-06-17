@@ -1,5 +1,5 @@
 /*
-efficint way to implemnt a queue using two stack.
+efficient way to implement a queue using two stack.
 here we have push function in O(1)
 
 problem URL: https://www.hackerrank.com/challenges/ctci-queue-using-
