@@ -8,10 +8,7 @@ first line of input contains length of linked list and next line contains linked
 Output : 
  print List after swappped
 
-Example :
-Input:
-1
-8
+Example:
 1 2 2 4 5 6 7 8
 
 Output:
@@ -20,81 +17,89 @@ Output:
 
 */
 
+
 #include<iostream>
 using namespace std;
 
-struct node{
- int data;
- node *next;
-};
+struct ListNode {
+	int val;
+	ListNode *next;
+        ListNode(int x) : val(x), next(NULL) {}
+ };
 
-node *head; // make  them global
-node *tail; 
 
-void insert(){
-    int n;
-    cin>>n;
-   
-   for(int i=0;i<n;i++) { 
-     int x; cin>>x;   
-      node *nw = new node;   // create a dynamic new node
-       if(i == 0){ 
-  	 nw->data = x;
-     	 tail = nw;
-	 head  = nw;
-       }
-       else{
-         nw->data = x;
-  	 tail->next = nw;
-         tail = nw;
-       }
-  }
- }
+class Solution {
+public:
 
-void swap(int *a, int *b){
-  	  int ptr;
-	  ptr = *b;
-	  *b = *a;
-	  *a = ptr;
-	  
-}  // end
+    void swapPairs(ListNode *head){
+		
+		ListNode *tmp  = head;
+		
 
- void pairwiseSwap(node *head){
-    node *tmp;
-    tmp = head;
-  
- while(tmp!=NULL){ 
-   
-   if(tmp->next!=NULL){ 
-       swap(tmp->data,tmp->next->data);
-        tmp = tmp->next;
-   }
-    tmp = tmp->next;
-     
- }
-}  // end func.
+		while(tmp!=nullptr and tmp->next!=nullptr){
+			
+			swapPointer(&tmp->val, &tmp->next->val);
+			
+			tmp = (tmp->next)->next;
+			
+			
+		}
+		
+		
+	}
+    
+    void swapPointer(int *a,int *b){
+        
+       int tmp = *a;
+       *a = *b;
+       *b = tmp;
+        
+    }
+    
+    
+    
+    
+    
+};  // end of class
 
-void printList(node *head){
-  node *tmp;
-  tmp =  head;
-  while(tmp!=NULL){
-   cout<<tmp->data<<" " ;
-   tmp = tmp->next;
-  }
-}  // end
 
- 
+void printList(ListNode *head){
+	
+	while(head!=nullptr){
+		cout<<head->val<<" ";
+		head = head->next;
+	}
+}
 
+	
+	
 int main(){
+	
+	Solution ob;
+	
+	ListNode *head = new ListNode(2);
+	ListNode *h2 = new ListNode(4);
+	head->next = h2;
+	ListNode *h3 = new ListNode(6);
+	h2->next = h3;
+	ListNode *h4 = new ListNode(7);
+	h3->next = h4;
+	ListNode *h5 = new ListNode(9);
+	h4->next = h5;
+	
+	printList(head);
+	cout<<"\n";
+	ob.swapPairs(head);
+	printList(head);
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
 
-  int t;
-  cin>>t;
-  while(t--){
-     insert();
-     
-     pairwiseSwap(head);
-     printList(head);
-  }
- 
-}  // end main
   
