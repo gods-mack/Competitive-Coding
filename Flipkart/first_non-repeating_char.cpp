@@ -44,26 +44,26 @@ void demo(vector<char> &s){
 				map[s[i]] = lis.begin();
 				freq[int(s[i])-int('a')]  = freq[int(s[i])-int('a')] + 1;  // increment freq
 			}
-			      	else{
-					freq[int(s[i])-int('a')]  = freq[int(s[i])-int('a')] + 1;  // increment freq
-			      	}
-				
-		    	}
-        
-		   	else{
-		        	if(freq[int(s[i])-int('a')] <=1){   // if repeat erase from list 
-				        lis.erase(map[s[i]]);
-				        map.erase(s[i]);
-            			}
-			
-		    	}
-        
-		    	if(lis.empty()){   // list empty return -1
-				cout<<-1<<" ";
-			}
 			else{
-		      		cout<<lis.back()<<" "; 
-	     		}
+				freq[int(s[i])-int('a')]  = freq[int(s[i])-int('a')] + 1;  // increment freq
+			}
+				
+		}
+        
+		else{   // repting char
+		        if(freq[int(s[i])-int('a')] <=1){   // if repeats than erase it from list 
+				lis.erase(map[s[i]]);
+				map.erase(s[i]);
+            		}
+			
+		}
+        
+		if(lis.empty()){   // list empty return -1
+			cout<<-1<<" ";
+		}
+		else{
+			cout<<lis.back()<<" "; 
+	     	}
         
 	} // end for loop
 
