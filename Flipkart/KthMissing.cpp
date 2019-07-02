@@ -22,37 +22,37 @@ using namespace std;
 
 void find(vector<int> &arr,int k,int arrSize){
 
- sort(arr.begin(),arr.end()); // sort the array
+   sort(arr.begin(),arr.end()); // sort the array
 
- int maxElement = *max_element(arr.begin(),arr.end());  // find maximum Element from array
- int minElement = *min_element(arr.begin(),arr.end());  // find minimum Element from array
+   int maxElement = *max_element(arr.begin(),arr.end());  // find maximum Element from array
+   int minElement = *min_element(arr.begin(),arr.end());  // find minimum Element from array
 
- int sum=0;
- for(int j=0;j<arrSize-1;j++){
-   sum = sum + (abs(arr[j+1]-arr[j])-1 );
+   int sum=0;
+   for(int j=0;j<arrSize-1;j++){
+       sum = sum + (abs(arr[j+1]-arr[j])-1 );
    
-   if(sum>=k){
-   int ans=arr[j+1] - abs(k-sum);
-    cout<<ans-1 <<endl;
-   break;
-   }
+       if(sum>=k){
+           int ans=arr[j+1] - abs(k-sum);
+           cout<<ans-1 <<endl;
+           break;
+       }
 
- }
+   }
 
 } // end function
 
 
 int main(){
- int arrSize;
- cin>>arrSize;
- vector<int> arr(arrSize);
+   int arrSize;
+   cin>>arrSize;
+   vector<int> arr(arrSize);
 
-for(int i=0;i<arrSize;i++){
- cin>>arr[i];
-}
- int k; cin>>k;
+   for(int i=0;i<arrSize;i++){
+       cin>>arr[i]; 
+   }
+   int k; cin>>k;
 
-find(arr,k,arrSize);
+  find(arr,k,arrSize);
 
 } // End Main()
 
