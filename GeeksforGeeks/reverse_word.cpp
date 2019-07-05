@@ -54,7 +54,7 @@ int main(){
 		cin>>s;
 		int i = s.length() -1;
 		reverseWord(s,i);
-	}
+	} 
 }
 		
 
