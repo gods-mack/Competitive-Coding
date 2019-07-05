@@ -1,5 +1,5 @@
 /*
-Given a String of length S, reverse the whole string without reversing the 
+Given a String of length S, reverse the whole string without reversing the  
 individual words in it. Words are separated by dots.
 
 Example:
@@ -31,14 +31,14 @@ void reverseWord(string s,int i){
 	        }
 	       
 	       	if(i != -1){
-				cout<<".";        // print dot also, when you are not in i=0,i=-1
-			}
+		    cout<<".";        // print dot also, when you are not in i=0,i=-1
+		}
 	    }
 	    else{
-			stack.push(s[i]);
+		    stack.push(s[i]);
 		}
-	   // cout<<s[i]<<" i "<<i<<endl;  // debugging std:: ouput
-	    i--;
+	    // cout<<s[i]<<" i "<<i<<endl;  // debugging std:: ouput
+	   i--;
 	    
 	}  // end while
 	
