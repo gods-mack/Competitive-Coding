@@ -24,14 +24,13 @@ void reverseWord(string s,int i){
 	stack<char> stack;
 	
 	while(i!=-2){
-	    if(s[i] == '.' or i==-1){
-	      
-	        while(!stack.empty()){
+	    if(s[i] == '.' or i==-1){   // dot comes pop entire stack string
+	    	while(!stack.empty()){
 	            cout<<stack.top();
 	            stack.pop();
 	        }
 	       
-	       if(i != -1){
+	       	if(i != -1){
 				cout<<".";        // print dot also, when you are not in i=0,i=-1
 			}
 	    }
