@@ -118,6 +118,7 @@ int main(){
         while(T--){  // testaCases Loop
         int n;
         cin>>n;
+        head =nullptr; tail =nullptr;        
         while(n--){
                 int x; cin>>x;
                 ob.push(x);
