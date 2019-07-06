@@ -113,6 +113,9 @@ class Solution{
 
 int main(){
         Solution ob;
+        int T; cin>>T;
+        
+        while(T--){  // testaCases Loop
         int n;
         cin>>n;
         while(n--){
@@ -126,7 +129,7 @@ int main(){
         cout<<endl;
         ob.removeTheLoop(head);
         cout<<"after removel of loop "<<endl;
-        ob.printList(head);
+        ob.printList(head); }
 }
                 
                 
