@@ -33,7 +33,7 @@ int makeAtoi(string s){
 	int answer = 0;
 	
 	
-	for(int i=0;i<s.lengtha;i++){
+	for(int i=0;i<s.length();i++){
 		
 		answer = answer + ( (int(s[i])-48)* pow(10,size) );
 		cout<<answer<<endl;
