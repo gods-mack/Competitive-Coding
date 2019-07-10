@@ -33,7 +33,7 @@ def common_prefix(vector):
 	for t in range(len(min_string),0,-1):
 		count = 0
 		curr  = ""
-		forv in vector:
+		for v in vector:
 			if(v.startswith(min_string[0:t])):
 				count = count + 1
 				curr = min_string[0:t]
