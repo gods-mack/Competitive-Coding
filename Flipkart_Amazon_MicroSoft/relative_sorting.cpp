@@ -39,6 +39,9 @@ void relativeSorting(std::vector<int> &a, std::vector<int > &b){
 }
 
 int main(){
+        int T; cin>>T;
+	while(T--){
+	
 	int m,n;
 	cin>>m>>n;
 	std::vector<int> a(m);
@@ -57,5 +60,7 @@ int main(){
 
 	relativeSorting(a,b);
 	cout<<endl;
+		
+	} // end of testCase loop	
 	
-}
+}  // main end
