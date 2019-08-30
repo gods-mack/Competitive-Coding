@@ -13,15 +13,10 @@ using namespace std;
 int getSubarray(vector<int> a){
 	int n = a.size();	
 	unordered_map<int,int> hash;
-
-	
-	cout<<endl;
-	for(auto it = hash.begin(); it != hash.end(); ++it){
-		cout<<it->first<<" "<<it->second<<endl;
-	}
-
 	int count  = 0;
 	int sum  = 0;
+	hash[0]++;
+	
 	for(int i = 0; i < n; i++){
 		sum += a[i];
 		if(hash.find(sum) != hash.end()){
@@ -29,7 +24,6 @@ int getSubarray(vector<int> a){
 		}
 		hash[sum]++;
 	}
-
 	return count;
 }
 
