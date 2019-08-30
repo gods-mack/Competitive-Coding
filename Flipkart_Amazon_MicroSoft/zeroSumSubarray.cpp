@@ -31,7 +31,6 @@ int getSubarray(vector<int> a){
 	}
 
 	return count;
-
 }
 
 int main(){
