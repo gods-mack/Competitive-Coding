@@ -7,6 +7,12 @@ of consecutive days just before the given day, for which the price of the stock 
 the current day is less than or equal to its price on the given day.
 For example, if an array of 7 days prices is given as {100, 80, 60, 70, 60, 75, 85}, 
 then the span values for corresponding 7 days are {1, 1, 1, 2, 1, 4, 6}
+
+Example: 
+price[100,65,70,120,80,90]
+output:
+[1,1,2,4,1,2]
+
 */
 
 
