@@ -1,14 +1,14 @@
 /*
-Given a N X N  matrix Matrix[N][N] of positive integers.  There are only three possible moves 
-from a cell Matrix[r][c].
 
-1. Matrix[r+1][c]
+Min Cost Path | DP-6
 
-2. Matrix[r+1][c-1]
-
-3. Matrix[r+1][c+1]
-
-Starting from any column in row 0, return the largest sum of any of the paths up to row N-1.
+Given a cost matrix cost[][] and a position (m, n) in cost[][], 
+write a function that returns cost of minimum cost path to reach (m, n) from (0, 0). 
+Each cell of the matrix represents a cost to traverse through that cell. Total cost of a 
+path to reach (m, n) is sum of all the costs on that path (including both source and destination).
+ou can only traverse down, right and diagonally lower cells from a given cell, i.e., from a given 
+ell (i, j), cells (i+1, j), (i, j+1) and (i+1, j+1) can be traversed. 
+You may assume that all costs are positive integers.
 
 */
 
