@@ -36,7 +36,7 @@ void bipartite(vector<vector<int>> graph, int V){
 				flag = 0;
 				break;
 			}
-		}
+		} 
 		if(flag == 0){ break;}
 	}
 
