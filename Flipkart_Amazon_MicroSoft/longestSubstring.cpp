@@ -1,4 +1,11 @@
+/*
+Given a string, find the length of the longest substring without repeating characters. 
 
+For example, 
+the longest substrings without repeating characters 
+for “ABDEFGABEF” are “BDEFGA” and “DEFGAB”, with length 6.
+
+*/
 
 #include<bits/stdc++.h>
 using namespace std;
