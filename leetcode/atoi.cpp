@@ -41,15 +41,15 @@ int str2int(string s){
 	for( ; i < len; i++){
     
         if(s[i] < '0' or s[i] > '9'){
-        	cout<<"bcch "<<ans<<endl;
             return minusFlag*ans;
         }
 		int curr = s[i] - '0';
 	
 		ans = ans*10 + (curr);
+		
 		//OVERFLOW handiling
 		if(-ans <= INT_MIN and minusFlag==-1){
-			cout<<"neg OVERFLOW"<<endl;
+			//cout<<"neg OVERFLOW"<<endl;
 			return INT_MIN;
 		}
         if(ans >= INT_MAX and minusFlag == 1){
