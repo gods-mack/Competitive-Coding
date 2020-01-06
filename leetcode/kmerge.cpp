@@ -1,5 +1,8 @@
 
 // merege k sorted list
+
+// time complexity O( Nlog(k))  N = number of element in largest list and  k is number of lists
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -15,62 +18,52 @@ struct Node
 };
 Node *curr,*head=nullptr;
 
+struct compare  
+ {  
+   bool operator()(const Node* h1, const Node* h2)  
+   {  
+       return h1->data > h2->data; 
+   }  
+ };
 
 
-void printList(vector<Node*> a){
 
-	int n = a.size();
 
-	for(int i = 0; i < n;i++){
-		Node *tmp = a[i];
-		while(tmp!=nullptr){
-			cout<<tmp->data<<"->";
-
-			tmp = tmp->next;
-		}
-		cout<<endl;
+void tra(Node *tmp){
+	while(tmp!= nullptr){
+		cout<<tmp->data<<" ";
+		tmp = tmp->next;
 	}
 }
 
+// merege k sorted LIst
 Node* kmerge(vector<Node*> a,int N){
-	Node *res = nullptr;
-	for(int k = 0; k <N;k++){
 
-		int n1 = (int)a[k].size();
-		int n2 = (int)a[k+1].size();
-		Node *head1 = a[k];
-		Node *head2 = a[k+1];
-		k++;
-		int l = 0;
-		int r = 0;
-		node *curr;
+	priority_queue<Node* , vector<Node*> ,compare > pq; 
 
-		while(l < n1 and r<n2){
+	Node *res = new Node(-1); // dummy head
+	Node *curr = res;
 
-			if(head1.data === head2.data){
-				if(res==nullptr){
-					curr = new Node(a[l]);
-					curr->next = Node(a[l]);
-					res = curr;
-					curr = curr->next;
-				}
-				else{
-					 Node *tmp = new Node(a[l]);
-					 curr->next = tmp;
-					 curr = tmp;
-					 curr->next = new Node(a[r]);
-					 curr = curr->next;
-				}
-				l++;
-				r++;
-			}
-			else if(head1.data > head2.data){
-				
-				r++;
-			}
-		}
+	for(int i = 0; i < N;i++){  // inseert all front elemnt of every list
+		pq.push(a[i]);
 	}
-}
+
+	while(!pq.empty()){
+
+		Node *tmp = pq.top();
+		pq.pop();
+		//cout<<"nikla "<<tmp->data<<endl;
+		curr->next = new Node(tmp->data);	
+		curr = curr->next;
+
+		if(tmp->next!=nullptr){
+			//cout<<"dala "<<tmp->next->data<<endl;
+			pq.push(tmp->next);
+		}
+
+	}
+	return res->next;
+} 
 
 int main(){
 	int t;
@@ -104,7 +97,9 @@ int main(){
 
 
 		}
-		printList(a);
+		Node *res = kmerge(a,N);
+		tra(res);
+
 	}
 	
 }
