@@ -1,6 +1,8 @@
 
 // strong connect components (SCC) of graph
 
+// kosaraju algorithm
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -45,6 +47,14 @@ int SCC(vector<vector<int>> graph, int V, int E){
 			DFS(graph,i,visited,st);
 		}
 	}
+	/*stack<int> tmps = st;
+	cout<<"tmp stack"<<endl;
+	while(!tmps.empty()){
+		cout<<tmps.top()<<endl;
+		tmps.pop();
+	}
+*/
+
 
 	for(int i  = 0; i < V; i++){
 		visited[i] = false;
@@ -61,14 +71,16 @@ int SCC(vector<vector<int>> graph, int V, int E){
 	 while(!st.empty()){
 	 	int u = st.top();
 	 	st.pop();
+	 	//cout<<u<<" ";
 	 	if(visited[u] == false){
+	 		//cout<<u<<" ";
 	 		DFSutil(GT,u,visited);
-	 		cout<<endl;
 	 		count++;
+	 		cout<<endl;
 	 	}
-
+	 	
 	 }
-	 cout<<"\n\n"<<count; .// number of connected graphs
+	 cout<<"\ncount scc "<<count; // number of connected graphs
 
 
 }
