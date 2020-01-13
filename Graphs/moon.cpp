@@ -1,6 +1,31 @@
 
 // moon journey on hackerRank
 
+/*\
+ The member states of the UN are planning to send
+ 2 people to the moon. They want them to be from different countries.
+ You will be given a list of pairs of astronaut ID's. 
+ Each pair is made of astronauts from the same country. Determine how many pairs of astronauts from different countries they can choose from.
+
+
+For example, we have the following data on 2 pairs of astronauts,
+ and 4 astronauts total, numbered 0 to 3
+through 
+
+input: 
+1   2
+2   3
+
+explanation : 
+
+Astronauts by country are [0] and [1,2,3] There are 3 pairs to 
+choose from: [0,1],[0,2] and [0,3]
+
+
+
+
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,6 +46,9 @@ void sol(vector<vector<int> > graph,int n,int e){
 	for(int i = 0; i < n; i++){ visited[i] = false;	}
 	vector<vector<int> > ans(n);
 	int ind = 0;
+	int res = 0;
+	int sum = 0;
+
 	for(int i = 0; i < n; i++){
 		/*if(visited[i] == false and {
 			ans[ind].push_back(i);
@@ -28,13 +56,18 @@ void sol(vector<vector<int> > graph,int n,int e){
 		}*/
 		if(visited[i] == false ){
 			dfs(graph,i,visited,ans,ind);
+			int size = ans[ind].size();
+			res = res + (sum*size);
+			sum  = sum + size;
 			ind++;
 		}
 
 		
 	}	
 
-	cout<<"ans \n";
+	cout<<"answer "<<res<<endl;
+
+	cout<<"all connected pairs\n";
 
 	for(int i = 0; i < ans.size(); i++){
 		for(int j =0; j < ans[i].size(); j++){
@@ -43,17 +76,7 @@ void sol(vector<vector<int> > graph,int n,int e){
 		cout<<endl;
 	}
 
-	cout<<"end "<<endl;
-	for(int i = 0; i < ans[0].size(); i++){
-		
-		for(int j = 1; j < ans.size(); j++){
-
-			for(int k = 0; k < ans[j].size(); k++){
-				cout<<ans[0][i]<<" "<<ans[j][k]<<endl;
-			}
-		}
-	}
-
+	
 
 }
 
