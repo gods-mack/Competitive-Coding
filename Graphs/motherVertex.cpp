@@ -2,8 +2,10 @@
 /*
 
 A mother vertex in a graph is a vertex from which 
-we can reach all the nodes in the graph through directed path. In other words, A mother vertex in a graph G = (V,E) is a vertex v such that all 
-other vertices in G can be reached by a path from v.
+we can reach all the nodes in the graph through directed path. 
+n other words, A mother vertex in a graph G = (V,E) 
+is a vertex v such that all other vertices in G can be 
+reached by a path from v.
 
 */
 
