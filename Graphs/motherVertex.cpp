@@ -1,4 +1,11 @@
+// mother vertex
+/*
 
+A mother vertex in a graph is a vertex from which 
+we can reach all the nodes in the graph through directed path. In other words, A mother vertex in a graph G = (V,E) is a vertex v such that all 
+other vertices in G can be reached by a path from v.
+
+*/
 
 // find mother vertex of a graph(V,E)
 
@@ -15,30 +22,39 @@ bool check(vector<bool> visited){
 	return true;
 }
 
-void motherUtil(vector<vector<int>> &graph,vector<bool> &visited,int v){
-	cout<<v<<" ";
+void motherUtil(vector<vector<int>> &graph,vector<bool> &visited,int &visitCount,int v){
+	//cout<<v<<" ";	
 	visited[v] = true;
+	visitCount++;
 	for(int i = 0; i< graph[v].size(); i++){
-		motherUtil(graph,visited,graph[v][i]);
+		if(visited[graph[v][i]]==false){
+			motherUtil(graph,visited,visitCount,graph[v][i]);
+		}
 	}
 
 }
 
-void motherVertex(vector<vector<int>> graph, int V,int E){
+int motherVertex(vector<vector<int>> graph, int V,int E){
 
+	int i = 0;
+	for(i = 0; i < V; i++){
 
-	for(int i = 0; i < V; i++){
-
-		vector<bool> visited(V);
-		for(int i =0; i < V; i++){ visited[i] = false;}
-		cout<<"expanding "<<i<<endl;
-		motherUtil(graph,visited,i);
-
-		if(check(visited)){
-			cout<<"mother vertex "<<i<<endl;
-			return;
+		vector<bool> visited(V,false);
+		int visitCount = 0;
+		motherUtil(graph,visited,visitCount,i);
+		if(visitCount == V){
+			break;
 		}
+
+		
 	}
+	if(i==V){
+		return -1;
+	}
+	else{
+		return  i;
+	}
+	 
 }
 
 int main(){
@@ -52,13 +68,7 @@ int main(){
 		graph[u].push_back(v);
 	}
 
-	cout<<"graph is\n";
-	for(int i = 0; i <V; i++){
-		for(int j = 0; j < graph[i].size(); j++){
-			cout<<i<<"->"<<graph[i][j]<<endl;
-		}
-		
-	}
+	
 
-	motherVertex(graph,V,E);
+	cout<<"mother "<<motherVertex(graph,V,E)<<endl;
 }
