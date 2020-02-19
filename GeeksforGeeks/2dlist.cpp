@@ -70,7 +70,7 @@ Node* constructLinkedMatrix(int mat[MAX][MAX], int size)
 {
    	Node *head = nullptr;
 
-   	Node *dp = nullptr;
+   	Node *dp = nullptr;  // down pointer to go along with downside of 2d array
 
 
    	Node *n = new Node(mat[0][0]);
