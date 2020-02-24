@@ -1,4 +1,7 @@
 
+// editorial link
+// https://codeforces.com/blog/entry/74224
+
 
 #include<bits/stdc++.h>
 #define MAX 200000
