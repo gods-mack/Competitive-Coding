@@ -34,7 +34,7 @@ void bigFactorial(int n){
 		q++;
 	}
 	len  = len-1;
-	cout<<len;
+	//cout<<len;
 	while(len>=0){
 		cout<<a[len];
 		len--;
