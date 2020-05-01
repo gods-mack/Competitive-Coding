@@ -27,7 +27,7 @@ int check(string a, string b,int m,int n,int tmp) {
 
 //BOTTOM-UP 
 
-void lc_substring(string a,string n){
+void lc_substring(string a,string b){
 
 	int n = a.length();
 	int m = b.length();
@@ -63,5 +63,6 @@ int main(){
 
 	int tmp = 0;
 	int ans = 0;
-	cout<<check(a,b,a.length(),b.length(),tmp);
+	cout<<check(a,b,a.length(),b.length(),tmp)<<endl;
+	lc_substring(a,b);
 }
