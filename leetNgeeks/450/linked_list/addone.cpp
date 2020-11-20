@@ -3,13 +3,13 @@
 
 void add_(Node *tmp, int &carry) {
 
-		if(tmp == NULL) {
+		if(tmp == NULL) { 
 			return;
 		}
 
 		add_(tmp->next, carry);
 
-		if(tmp->next == NULL) {
+		if(tmp->next == NULL) { // last node
 			tmp->data += 1;
 			carry = tmp->data / 10;
 			tmp->data = tmp->data % 10;
@@ -32,7 +32,7 @@ void addone() {
 		if(last_node->data == 9) {
 			add_(head, carry);
 		 
-			if(carry == 1) {
+			if(carry == 1) { // have carry?, make extra node
 				//cout<<"we have carry\n";
 				Node *new_node = new Node(1);
 				new_node->next = head;
