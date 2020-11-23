@@ -19,7 +19,7 @@ void dfs(int u,vector<vector<int>> &g,vector<int> &vis) {
 	}
 }
 
-void count_component(vector<vector<int>> g,int n) {
+int count_component(vector<vector<int>> g,int n) {
 
 	//cout<<"dd..\n";
 	vector<int> vis(n,false);
@@ -34,21 +34,33 @@ void count_component(vector<vector<int>> g,int n) {
 			count++;
 		}
 	}
-	cout<<"count "<<count<<endl;
+//	cout<<"count "<<count<<endl;
+
+	return count;
 }
 
+int makeConnected(int n, vector<vector<int>>& connections) {
+        
+        
+        int edge_count = connections.size();
+        if(edge_count < n-1) {
+            return -1;
+        }
+        
+        vector<vector<int>> g(n);
+        for(int i = 0; i < edge_count; i++) {
+            g[connections[i][0]].push_back(connections[i][1]);
+            g[connections[i][1]].push_back(connections[i][0]);
+        }
+        
+        int total_compo = count_component(g,n);
+        
+        return total_compo - 1;
+        
+        
+    }
+
 int main() {
-	int n; cin>>n;
-
-	int e; cin>>e;
-	vector<vector<int>> g(n);
-
-	for(int i = 0; i < e; i++) {
-		int a,b;
-		cin>>a>>b;
-		g[a].push_back(b);
-		g[b].push_back(a);
-
-	}
-	count_component(g,n);
+	
+	
 }
