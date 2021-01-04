@@ -3,6 +3,8 @@
 // https://leetcode.com/problems/partition-equal-subset-sum/
 // 416. Partition Equal Subset Sum
 
+//https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1#
+
 class Solution {
 public:
     
