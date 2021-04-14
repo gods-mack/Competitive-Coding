@@ -1,5 +1,5 @@
 
-// https://www.geeksforgeeks.org/amazon-interview-experience-for-software-development-engineer-ii/
+// https://www.geeksforgeeks.org/amazon-interview-experience-for-software-development-engineer-ii/	
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -40,8 +40,10 @@ void getNumberOfOptions(vector<int> jeans,vector<int> shoes,vector<int> skirts,v
 }
 
 int main() {
-	vector<int> jeans 	= {2,3};
-	vector<int> shoes 	= {4};
+
+	// sort all arrays, I mean all arrays should be in sorted order
+	vector<int> jeans 	= {2,3}; // sort it 
+	vector<int> shoes 	= {4};   // sort it
 	vector<int> skirts 	= {2,3};
 	vector<int> tops 	= {1,2};
 
